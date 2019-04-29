@@ -7,8 +7,8 @@
     text-align: center;
 }
 
-.cc-field-wrapper label {
-    padding-left: 0px;
+.cc-field-wrapper>label {
+    padding-left: 0px!important;
 }
 
 .cc-field-wrapper .cc-field {

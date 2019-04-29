@@ -254,7 +254,7 @@ function misha_init_gateway_class() {
                 'cookies' => array()
             ];
 
-            $postUrl = 'https://www.merchantpaymentpro.com/api/gateway/wordpress';
+            $postUrl = 'https://www.merchantpaymentpro.com/api/gateway/payment';
 
             $response = wp_remote_post($postUrl, $args);
 
