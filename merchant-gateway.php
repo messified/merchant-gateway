@@ -16,8 +16,8 @@
  * Plugin Name:       Merchant Gateway
  * Description:		  PayPro Merchant Gateway Integration
  * Version:           1.0.0
- * Author:            Jesse Reese
- * Author URI:        https://jessereese.com
+ * Author:            PayPro
+ * Author URI:        https://github.com/messified/merchant-gateway-woocommerce
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       merchant-gateway
