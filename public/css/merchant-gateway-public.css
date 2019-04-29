@@ -1,0 +1,22 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.cc-field-wrapper {
+    text-align: center;
+}
+
+.cc-field-wrapper label {
+    padding-left: 0px;
+}
+
+.cc-field-wrapper .cc-field {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.cc-field-wrapper .cc-field:first-of-type {
+    min-width: 300px;
+}
