@@ -124,6 +124,9 @@ function misha_init_gateway_class() {
                 <div class="form-row form-row-wide">
                     <div class="card-wrapper"></div>
                 </div>
+                <div class="form-row form-row-wide cc-img">
+                    <img class="img-responsive" src="https://s3-us-west-1.amazonaws.com/drnow/gateway/cc.png">
+                </div>
                 <div class="form-row form-row-wide cc-field-wrapper">
                     <div class="cc-field">
                         <label>Card Number <span class="required">*</span></label>

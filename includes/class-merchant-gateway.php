@@ -127,9 +127,12 @@ class Merchant_Gateway {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-merchant-gateway-paypro.php';
 
+		/**
+		 * PayPro Merchant Gateway Woocommerce Extension
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-merchant-gateway-updater.php';
 
 		$this->loader = new Merchant_Gateway_Loader();
-
 	}
 
 	/**
