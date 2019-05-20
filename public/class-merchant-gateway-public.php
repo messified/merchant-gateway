@@ -95,7 +95,7 @@ class Merchant_Gateway_Public {
 		 * class.
 		 */
 		wp_enqueue_script( $this->plugin_name, '//cdnjs.cloudflare.com/ajax/libs/card/2.4.0/jquery.card.js', array('jquery'), '2.4.0', true);
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'public/js/merchant-gateway-public.js', array( 'jquery' ), $this->version, true);
+		// wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'public/js/merchant-gateway-public.js', array( 'jquery' ), $this->version, true);
 
 	}
 

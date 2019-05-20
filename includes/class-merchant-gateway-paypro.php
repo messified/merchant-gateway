@@ -23,7 +23,7 @@ function misha_init_gateway_class() {
  		 */
  		public function __construct() {
             $this->id = 'paypro_merchant_gateway'; // payment gateway plugin ID
-            $this->icon = 'https://www.merchantpaymentpro.com/sites/default/files/logo.png'; // URL of the icon that will be displayed on checkout page near your gateway name
+            $this->icon = ''; // URL of the icon that will be displayed on checkout page near your gateway name
             $this->has_fields = true; // in case you need a custom credit card form
             $this->supports[] = 'default_credit_card_form';
             $this->method_title = 'Merchant Gateway';
@@ -82,14 +82,14 @@ function misha_init_gateway_class() {
                     'title'       => 'Secure Merchant Gateway',
                     'type'        => 'text',
                     'description' => 'This controls the title which the user sees during checkout.',
-                    'default'     => 'Merchant Gateway :: Credit Card Processor',
+                    'default'     => '',
                     'desc_tip'    => true,
                 ),
                 'description' => array(
                     'title'       => 'Description',
                     'type'        => 'textarea',
                     'description' => 'This controls the description which the user sees during checkout.',
-                    'default'     => 'Merchant Gateway',
+                    'default'     => '',
                 ),
                 'merchant_token' => array(
                     'title'       => 'Merchant Token',
@@ -125,7 +125,7 @@ function misha_init_gateway_class() {
                     <div class="card-wrapper"></div>
                 </div>
                 <div class="form-row form-row-wide cc-img">
-                    <img class="img-responsive" src="https://s3-us-west-1.amazonaws.com/drnow/gateway/cc.png">
+                    <img style="margin:0 auto;" class="img-responsive" src="https://s3-us-west-1.amazonaws.com/drnow/gateway/cc.png">
                 </div>
                 <div class="form-row form-row-wide cc-field-wrapper">
                     <div class="cc-field">
@@ -179,7 +179,7 @@ function misha_init_gateway_class() {
             }
 
             wp_enqueue_script( $this->plugin_name, '//cdnjs.cloudflare.com/ajax/libs/card/2.4.0/jquery.card.js', array('jquery'), '2.4.0', false);
-            wp_enqueue_script( 'merchant_gateway', '//wpsandbox.test/wp-content/plugins/merchant-gateway/public/js/merchant-gateway-public.js', array( 'jquery' ), $this->version, true);
+            wp_enqueue_script( 'merchant_gateway', '/wp-content/plugins/merchant-gateway/public/js/merchant-gateway-public.js', array( 'jquery' ), $this->version, true);
 	 	}
 
 		public function validate_fields() {
