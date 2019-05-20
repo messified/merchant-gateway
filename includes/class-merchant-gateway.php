@@ -7,7 +7,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       https://jessereese.com
- * @since      1.0.0
+ * @since      1.0.3
  *
  * @package    Merchant_Gateway
  * @subpackage Merchant_Gateway/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.0.0
+ * @since      1.0.3
  * @package    Merchant_Gateway
  * @subpackage Merchant_Gateway/includes
  * @author     Jesse Reese <jesse.c.reese@gmail.com>
@@ -33,7 +33,7 @@ class Merchant_Gateway {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.3
 	 * @access   protected
 	 * @var      Merchant_Gateway_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -42,7 +42,7 @@ class Merchant_Gateway {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.3
 	 * @access   protected
 	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
@@ -51,7 +51,7 @@ class Merchant_Gateway {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.3
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
@@ -64,13 +64,13 @@ class Merchant_Gateway {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.3
 	 */
 	public function __construct() {
 		if ( defined( 'MERCHANT_GATEWAY_VERSION' ) ) {
 			$this->version = MERCHANT_GATEWAY_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.0.3';
 		}
 		$this->plugin_name = 'merchant-gateway';
 
@@ -94,7 +94,7 @@ class Merchant_Gateway {
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.3
 	 * @access   private
 	 */
 	private function load_dependencies() {
@@ -141,7 +141,7 @@ class Merchant_Gateway {
 	 * Uses the Merchant_Gateway_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.3
 	 * @access   private
 	 */
 	private function set_locale() {
@@ -156,7 +156,7 @@ class Merchant_Gateway {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.3
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
@@ -172,7 +172,7 @@ class Merchant_Gateway {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.3
 	 * @access   private
 	 */
 	private function define_public_hooks() {
@@ -187,7 +187,7 @@ class Merchant_Gateway {
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
-	 * @since    1.0.0
+	 * @since    1.0.3
 	 */
 	public function run() {
 		$this->loader->run();
@@ -197,7 +197,7 @@ class Merchant_Gateway {
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
 	 *
-	 * @since     1.0.0
+	 * @since     1.0.3
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_plugin_name() {
@@ -207,7 +207,7 @@ class Merchant_Gateway {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     1.0.0
+	 * @since     1.0.3
 	 * @return    Merchant_Gateway_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
@@ -217,7 +217,7 @@ class Merchant_Gateway {
 	/**
 	 * Retrieve the version number of the plugin.
 	 *
-	 * @since     1.0.0
+	 * @since     1.0.3
 	 * @return    string    The version number of the plugin.
 	 */
 	public function get_version() {
