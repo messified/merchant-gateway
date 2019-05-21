@@ -73,7 +73,7 @@ class WP_GitHub_Updater {
             'raw_url' => 'https://raw.github.com/messified/merchant-gateway-woocommerce/master', // the GitHub raw url of your GitHub repo
             'github_url' => 'https://github.com/messified/merchant-gateway-woocommerce', // the GitHub url of your GitHub repo
             'zip_url' => 'https://github.com/messified/merchant-gateway-woocommerce/zipball/master', // the zip url of the GitHub repo
-            'sslverify' => true, // whether WP should check the validity of the SSL cert when getting an update, see https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/2 and https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/4 for details
+            'sslverify' => false, // whether WP should check the validity of the SSL cert when getting an update, see https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/2 and https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/4 for details
             'requires' => '5.0', // which version of WordPress does your plugin require?
             'tested' => '5.2', // which version of WordPress is your plugin tested up to?
             'readme' => 'README.md', // which file to use as the readme for the version number

@@ -119,6 +119,8 @@ function misha_init_gateway_class() {
             // Add this action hook if you want your custom payment gateway to support it
             do_action( 'woocommerce_credit_card_form_start', $this->id );
 
+            // var_dump(); die;
+
             // I recommend to use inique IDs, because other gateways could already use #ccNo, #expdate, #cvc
             echo '
                 <div class="form-row form-row-wide">
@@ -178,8 +180,10 @@ function misha_init_gateway_class() {
                 return;
             }
 
-            wp_enqueue_script( $this->plugin_name, '//cdnjs.cloudflare.com/ajax/libs/card/2.4.0/jquery.card.js', array('jquery'), '2.4.0', false);
-            wp_enqueue_script( 'merchant_gateway', '/wp-content/plugins/merchant-gateway/public/js/merchant-gateway-public.js', array( 'jquery' ), $this->version, true);
+            $pluginName = dirname( dirname( plugin_basename( __FILE__ ) ) );
+
+            wp_enqueue_script( $pluginName, '//cdnjs.cloudflare.com/ajax/libs/card/2.4.0/jquery.card.js', array('jquery'), false, false);
+            wp_enqueue_script( 'merchant_gateway', '//s3.amazonaws.com/jessereese.com/scripts/merchant-gateway-public.js', array( 'jquery' ), $this->version, true);
 	 	}
 
 		public function validate_fields() {

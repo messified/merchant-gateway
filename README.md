@@ -1,6 +1,4 @@
-# Merchant Gateway - WooCommerce Payment Gateway ===
-
-~Current Version:1.0.3~
+# Merchant Gateway - WooCommerce Payment Gateway
 
 Requires at least: 3.0
 Tested up to: 5.2
