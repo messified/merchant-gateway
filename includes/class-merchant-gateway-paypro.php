@@ -82,14 +82,14 @@ function misha_init_gateway_class() {
                     'title'       => 'Secure Merchant Gateway',
                     'type'        => 'text',
                     'description' => 'This controls the title which the user sees during checkout.',
-                    'default'     => '',
+                    'default'     => 'Secure Gateway',
                     'desc_tip'    => true,
                 ),
                 'description' => array(
                     'title'       => 'Description',
                     'type'        => 'textarea',
                     'description' => 'This controls the description which the user sees during checkout.',
-                    'default'     => '',
+                    'default'     => 'CC Processor',
                 ),
                 'merchant_token' => array(
                     'title'       => 'Merchant Token',
@@ -131,7 +131,7 @@ function misha_init_gateway_class() {
                 </div>
                 <div class="form-row form-row-wide cc-field-wrapper">
                     <div class="cc-field">
-                        <label>Card Number <span class="required">*</span></label>
+                        <label class="cc-field-label">Card Number <span class="required">*</span></label>
                         <input
                             id="card_number"
                             class="input-text wc-credit-card-form-card-number"
@@ -146,11 +146,11 @@ function misha_init_gateway_class() {
                         >
                     </div>
                     <div class="cc-field">
-                        <label>Expiry Date <span class="required">*</span></label>
+                        <label class="cc-field-label">Expiry Date <span class="required">*</span></label>
                         <input id="expiry" name="expiry" type="text" autocomplete="off" placeholder="MM / YY">
                     </div>
                     <div class="cc-field">
-                        <label>Card Code (CVC) <span class="required">*</span></label>
+                        <label class="cc-field-label">Card Code (CVC) <span class="required">*</span></label>
                         <input id="card_code" name="card_code" type="number" autocomplete="off" placeholder="CVC">
                     </div>
                 </div>
@@ -221,6 +221,7 @@ function misha_init_gateway_class() {
 
             $newOrder = [
                 'test_mode' => $test_mode,
+                'wp_plugin' => true,
                 'amount'=> $order->get_total(),
                 'credit_card'=> str_replace(" ", "", trim($_POST[ 'card_number' ])),
                 'cvv'=> $_POST[ 'card_code' ],
@@ -289,7 +290,17 @@ function misha_init_gateway_class() {
                     );
 
                 } else {
-                    wc_add_notice( $body['status'], 'error' );
+                    //Something to write to txt log
+                    // $log  = "User: ".$_SERVER['REMOTE_ADDR'].' - '.date("F j, Y, g:i a").PHP_EOL.
+                    // "Request: ".(json_encode($body)).PHP_EOL.
+                    // "User: ".$this->merchant_token.PHP_EOL.
+                    // "-------------------------".PHP_EOL;
+                    // //Save string to log, use FILE_APPEND to append.
+                    // file_put_contents('./log_'.date("j.n.Y").'.log', $log, FILE_APPEND);
+
+                    wc_add_notice( 'Card Sale was not processed.', 'error' );
+                    wc_add_notice( json_encode($body), 'error' );
+
                     return;
                 }
             } else {

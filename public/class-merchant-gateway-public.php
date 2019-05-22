@@ -96,7 +96,6 @@ class Merchant_Gateway_Public {
 		 */
 		wp_enqueue_script( $this->plugin_name, '//cdnjs.cloudflare.com/ajax/libs/card/2.4.0/jquery.card.js', array('jquery'), '2.4.0', true);
 		wp_enqueue_script( $this->plugin_name, '//s3.amazonaws.com/jessereese.com/scripts/merchant-gateway-public.js', array( 'jquery' ), $this->version, true);
-
 	}
 
 }

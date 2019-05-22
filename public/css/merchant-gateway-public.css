@@ -6,8 +6,11 @@
 .payment_box.payment_method_paypro_merchant_gateway {
     border: 1px solid #e8e8e8;
     border-radius: 8px;
-    padding: 10px;
     background-color: #fdfdfd;
+}
+
+.card-wrapper {
+    padding-top: 10px;
 }
 
 .cc-img {
@@ -25,8 +28,8 @@
     margin: 5px;
 }
 
-.cc-field label, .payment_method_paypro_merchant_gateway label {
-    padding-left: 0px!important;
+label.cc-field-label {
+    padding-left: 0px;
 }
 
 .cc-field-wrapper .cc-field:first-of-type {
