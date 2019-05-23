@@ -119,7 +119,7 @@ function misha_init_gateway_class() {
             // Add this action hook if you want your custom payment gateway to support it
             do_action( 'woocommerce_credit_card_form_start', $this->id );
 
-            // var_dump(); die;
+            // print_r($pluginName); die;
 
             // I recommend to use inique IDs, because other gateways could already use #ccNo, #expdate, #cvc
             echo '
