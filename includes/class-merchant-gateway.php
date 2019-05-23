@@ -64,7 +64,7 @@ class Merchant_Gateway {
 		if ( defined( 'MERCHANT_GATEWAY_VERSION' ) ) {
 			$this->version = MERCHANT_GATEWAY_VERSION;
 		} else {
-			$this->version = '1.2';
+			$this->version = '1.3';
 		}
 		$this->plugin_name = 'merchant-gateway';
 
