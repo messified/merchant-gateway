@@ -33,7 +33,6 @@ class Merchant_Gateway {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    1.0.4
 	 * @access   protected
 	 * @var      Merchant_Gateway_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -42,7 +41,6 @@ class Merchant_Gateway {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    1.0.4
 	 * @access   protected
 	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
@@ -51,7 +49,6 @@ class Merchant_Gateway {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    1.0.4
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
@@ -64,7 +61,6 @@ class Merchant_Gateway {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.0.4
 	 */
 	public function __construct() {
 		if ( defined( 'MERCHANT_GATEWAY_VERSION' ) ) {
@@ -94,7 +90,6 @@ class Merchant_Gateway {
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
 	 *
-	 * @since    1.0.4
 	 * @access   private
 	 */
 	private function load_dependencies() {
@@ -141,7 +136,6 @@ class Merchant_Gateway {
 	 * Uses the Merchant_Gateway_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    1.0.4
 	 * @access   private
 	 */
 	private function set_locale() {
@@ -156,7 +150,6 @@ class Merchant_Gateway {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.4
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
@@ -172,7 +165,6 @@ class Merchant_Gateway {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.4
 	 * @access   private
 	 */
 	private function define_public_hooks() {
@@ -187,7 +179,6 @@ class Merchant_Gateway {
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
-	 * @since    1.0.4
 	 */
 	public function run() {
 		$this->loader->run();
