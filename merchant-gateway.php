@@ -9,13 +9,13 @@
  * that starts the plugin.
  *
  * @link              https://www.merchantpaymentpro.com
- * @since             1.2
+ * @since             1.1
  * @package           Merchant_Gateway
  *
  * @wordpress-plugin
  * Plugin Name:       Merchant Gateway
  * Description:		  PayPro Merchant Gateway Integration
- * Version:           1.2
+ * Version:           1.1
  * Author:            PayPro
  * Author URI:        https://github.com/messified/merchant-gateway-woocommerce
  * License:           GPL-2.0+
@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.4 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'MERCHANT_GATEWAY_VERSION', '1.2' );
+define( 'MERCHANT_GATEWAY_VERSION', '1.1' );
 
 /**
  * The code that runs during plugin activation.

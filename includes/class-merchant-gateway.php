@@ -7,7 +7,6 @@
  * public-facing side of the site and the admin area.
  *
  * @link       https://jessereese.com
- * @since      1.0.4
  *
  * @package    Merchant_Gateway
  * @subpackage Merchant_Gateway/includes
@@ -22,7 +21,6 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.0.4
  * @package    Merchant_Gateway
  * @subpackage Merchant_Gateway/includes
  * @author     Jesse Reese <jesse.c.reese@gmail.com>
@@ -66,7 +64,7 @@ class Merchant_Gateway {
 		if ( defined( 'MERCHANT_GATEWAY_VERSION' ) ) {
 			$this->version = MERCHANT_GATEWAY_VERSION;
 		} else {
-			$this->version = '1.0.4';
+			$this->version = '1.2';
 		}
 		$this->plugin_name = 'merchant-gateway';
 
@@ -188,7 +186,6 @@ class Merchant_Gateway {
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
 	 *
-	 * @since     1.0.4
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_plugin_name() {
@@ -198,7 +195,6 @@ class Merchant_Gateway {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     1.0.4
 	 * @return    Merchant_Gateway_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
@@ -208,7 +204,6 @@ class Merchant_Gateway {
 	/**
 	 * Retrieve the version number of the plugin.
 	 *
-	 * @since     1.0.4
 	 * @return    string    The version number of the plugin.
 	 */
 	public function get_version() {
