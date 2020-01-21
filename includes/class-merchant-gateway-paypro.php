@@ -119,9 +119,6 @@ function misha_init_gateway_class() {
             // Add this action hook if you want your custom payment gateway to support it
             do_action( 'woocommerce_credit_card_form_start', $this->id );
 
-            // print_r($pluginName); die;
-
-            // I recommend to use inique IDs, because other gateways could already use #ccNo, #expdate, #cvc
             echo '
                 <div class="form-row form-row-wide">
                     <div class="card-wrapper"></div>
@@ -223,7 +220,7 @@ function misha_init_gateway_class() {
                 'test_mode' => $test_mode,
                 'wp_plugin' => true,
                 'amount'=> $order->get_total(),
-                'credit_card'=> str_replace(" ", "", trim($_POST[ 'card_number' ])),
+                'cc_number'=> str_replace(" ", "", trim($_POST[ 'card_number' ])),
                 'cvv'=> $_POST[ 'card_code' ],
                 'month'=> $card_month,
                 'year'=> $card_year,
@@ -262,7 +259,7 @@ function misha_init_gateway_class() {
                 'cookies' => array()
             ];
 
-            $postUrl = 'https://www.merchantpaymentpro.com/api/gateway/payment';
+            $postUrl = 'https://www.merchantpaymentpro.com/api/secure/charge';
 
             $response = wp_remote_post($postUrl, $args);
 
