@@ -9,13 +9,13 @@
  * that starts the plugin.
  *
  * @link              https://www.merchantpaymentpro.com
- * @since             1.4
+ * @since             1.4.2
  * @package           Merchant_Gateway
  *
  * @wordpress-plugin
  * Plugin Name:       Merchant Gateway
  * Description:		  	PayPro Merchant Gateway Integration
- * Version:           1.4
+ * Version:           1.4.2
  * Author:            PayPro
  * Author URI:        https://github.com/messified/merchant-gateway-woocommerce
  * License:           GPL-2.0+

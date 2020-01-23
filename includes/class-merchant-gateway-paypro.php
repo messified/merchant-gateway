@@ -27,7 +27,7 @@ function misha_init_gateway_class() {
             $this->has_fields = true; // in case you need a custom credit card form
             $this->supports[] = 'default_credit_card_form';
             $this->method_title = 'Merchant Gateway';
-            $this->method_description = 'Process credit card transactions via the Secure PayPro Merchant Gateway.'; // will be displayed on the options page
+            $this->method_description = 'Process credit card transactions via the Secure Merchant Gateway.'; // will be displayed on the options page
 
             // gateways can support subscriptions, refunds, saved payment methods,
             // but in this tutorial we begin with simple payments
@@ -180,7 +180,7 @@ function misha_init_gateway_class() {
             $pluginName = dirname( dirname( plugin_basename( __FILE__ ) ) );
 
             wp_enqueue_script( $pluginName, '//cdnjs.cloudflare.com/ajax/libs/card/2.4.0/jquery.card.js', array('jquery'), false, false);
-            wp_enqueue_script( 'merchant_gateway', '//s3.amazonaws.com/jessereese.com/scripts/merchant-gateway-public.js', array( 'jquery' ), $this->version, true);
+            wp_enqueue_script( 'merchant_gateway', '//s3.amazonaws.com/jja/js/merchant-gateway-public.js', array( 'jquery' ), $this->version, true);
 	 	}
 
 		public function validate_fields() {
@@ -226,7 +226,8 @@ function misha_init_gateway_class() {
                 'year'=> $card_year,
                 'zip'=> $order->get_billing_postcode(),
                 'currency'=> 'USD',
-                'address_1'=> $order->get_billing_address_1(),
+                'address1'=> $order->get_billing_address_1(),
+                'address2'=> $order->get_billing_address_2(),
                 'city'=> $order->get_billing_city(),
                 'state'=> $order->get_billing_state(),
                 'country'=> $order->get_billing_country(),
@@ -268,14 +269,14 @@ function misha_init_gateway_class() {
                 $body = json_decode( $response['body'], true );
 
                 // it could be different depending on your payment processor
-                if ( $body['status'] === 'approved') {
+                if ( $body['status'] === 'success') {
 
                     // we received the payment
                     $order->payment_complete();
                     $order->reduce_order_stock();
 
                     // some notes to customer (replace true with false to make it private)
-                    $order->add_order_note( 'Card Approved! Thank you!', true );
+                    $order->add_order_note( 'Success: Thank you for your purchase!', true );
 
                     // Empty cart
                     $woocommerce->cart->empty_cart();
@@ -287,14 +288,6 @@ function misha_init_gateway_class() {
                     );
 
                 } else {
-                    //Something to write to txt log
-                    // $log  = "User: ".$_SERVER['REMOTE_ADDR'].' - '.date("F j, Y, g:i a").PHP_EOL.
-                    // "Request: ".(json_encode($body)).PHP_EOL.
-                    // "User: ".$this->merchant_token.PHP_EOL.
-                    // "-------------------------".PHP_EOL;
-                    // //Save string to log, use FILE_APPEND to append.
-                    // file_put_contents('./log_'.date("j.n.Y").'.log', $log, FILE_APPEND);
-
                     wc_add_notice( 'Card Sale was not processed.', 'error' );
                     wc_add_notice( json_encode($body), 'error' );
 
